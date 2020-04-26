@@ -1,0 +1,12 @@
+---
+
+- name: Install virtual env wrapper
+  pip:
+    name: virtualenvwrapper
+    extra_args: --user
+  become: false
+
+- name: Install code extensions
+  shell: code --install-extension {{ item.value }}
+  with_dict: "{{ code_extensions }}"
+  become: false

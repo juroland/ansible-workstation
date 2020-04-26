@@ -1,0 +1,32 @@
+---
+
+- name: Add microsoft apt-key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+    keyring: /usr/share/keyrings/packages.microsoft.gpg
+
+- name: Add vscode apt repository
+  apt_repository:
+    repo: 'deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main'
+    state: present
+    filename: vscode
+    update_cache: yes
+
+- name: Add google apt-key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub 
+    state: present
+
+- name: Add chrome apt repository
+  apt_repository:
+    repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
+    state: present
+    filename: chrome
+    update_cache: yes
+
+- name: Add PPAs
+  apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - ppa:phoerious/keepassxc

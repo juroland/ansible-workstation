@@ -1,0 +1,41 @@
+---
+- name: Upgrade all packages
+  apt:
+    name: "*"
+    state: latest
+
+- name: Install packages
+  apt:
+    pkg:
+    - apt-transport-https
+    - ca-certificates
+    - chrome-gnome-shell
+    - code
+    - curl
+    - docker
+    - docker-compose
+    - gnupg-agent
+    - google-chrome-stable
+    - htop
+    - keepassxc
+    - python3-gpg
+    - python3-pip
+    - python3-psutil
+    - python3-venv
+    - software-properties-common
+    - tilix
+    - x11-utils
+    - zsh
+
+- name: Download and install binary files
+  get_url:
+    url: "{{ item.value.url }}"
+    dest: /usr/local/bin/{{ item.value.name }}
+    mode: 0755
+  with_dict: "{{ binaries }}"
+
+- name: Install external debian packages
+  apt:
+    deb: "{{ item }}"
+  loop:
+    - https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb

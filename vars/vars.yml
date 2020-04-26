@@ -1,0 +1,36 @@
+---
+
+# User
+user: you
+user_email: you@example.com
+
+# Gnome
+gsettings:
+  minimine-on-click:
+    key: /org/gnome/shell/extensions/dash-to-dock/click-action
+    value: "'minimize'"
+  desktop-toggle: # ensure ctrl+alt+d is disabled
+    key: /org/gnome/desktop/wm/keybindings/show-desktop
+    value: "['<Primary><Super>d', '<Super>d']"
+
+dotfiles:
+  repo: http://github.com/juroland/dotfiles
+
+binaries:
+  kubectl:
+    name: kubectl
+    url: https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+
+code_extensions:
+  code_spell_checker: streetsidesoftware.code-spell-checker
+  docker: ms-azuretools.vscode-docker
+  go: ms-vscode.go
+  markdownlint: davidanson.vscode-markdownlint
+  path_intellisense: christian-kohler.path-intellisense
+  pyright: ms-pyright.pyright
+  python: ms-python.python
+  remote_ssh_editing_config: ms-vscode-remote.remote-ssh-edit
+  remote_ssh: ms-vscode-remote.remote-ssh
+  vim: vscodevim.vim
+  vscode-icons: vscode-icons-team.vscode-icons
+  yaml: redhat.vscode-yaml

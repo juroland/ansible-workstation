@@ -1,0 +1,19 @@
+---
+
+- name: Check dotfiles repository exists
+  stat:
+    path: /home/{{ user }}/Repositories/dotfiles
+  register: dotfiles_dir
+
+- name: Clone my dotfiles
+  git: repo={{ dotfiles.repo }} dest=/home/{{ user }}/Repositories/dotfiles
+    recursive=yes accept_hostkey=yes update=yes track_submodules=yes
+  ignore_errors: yes
+  become: false
+  when: not dotfiles_dir.stat.exists
+
+- name: Create dotfiles symlinks
+  shell: /home/{{ user }}/Repositories/dotfiles/setup.sh
+  ignore_errors: yes
+  become: false
+  when: not dotfiles_dir.stat.exists
