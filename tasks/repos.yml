@@ -25,6 +25,19 @@
     filename: chrome
     update_cache: yes
 
+- name: Add google cloud apt-key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+    keyring: /usr/share/keyrings/cloud.google.gpg
+
+- name: Add google cloud sdk repository
+  apt_repository:
+    repo: 'deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main'
+    state: present
+    filename: gcloud
+    update_cache: yes
+
 - name: Add PPAs
   apt_repository:
     repo: "{{ item }}"
