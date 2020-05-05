@@ -43,3 +43,4 @@
     repo: "{{ item }}"
   loop:
     - ppa:phoerious/keepassxc
+    - ppa:deadsnakes/ppa
