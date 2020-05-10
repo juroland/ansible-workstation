@@ -3,5 +3,5 @@
 
 ```BASH
 ./init.sh
-ansible-playbook main.yml -e "user=yourusername user_email=you@example.com" --become -K
+ansible-playbook main.yml -i inventory -e "user=yourusername user_email=you@example.com" --become -K
 ```

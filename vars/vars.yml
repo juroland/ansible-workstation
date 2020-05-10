@@ -22,8 +22,10 @@ binaries:
     url: https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
 
 code_extensions:
+  autodocstring: njpwerner.autodocstring
   code_spell_checker: streetsidesoftware.code-spell-checker
   docker: ms-azuretools.vscode-docker
+  github-pull-request: github.vscode-pull-request-github
   go: ms-vscode.go
   markdownlint: davidanson.vscode-markdownlint
   path_intellisense: christian-kohler.path-intellisense
