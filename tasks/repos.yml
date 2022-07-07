@@ -17,10 +17,11 @@
   apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub 
     state: present
+    keyring: /usr/share/keyrings/google.gpg
 
 - name: Add chrome apt repository
   apt_repository:
-    repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
+    repo: 'deb [arch=amd64 signed-by=/usr/share/keyrings/google.gpg] https://dl.google.com/linux/chrome/deb/ stable main'
     state: present
     filename: chrome
     update_cache: yes
@@ -44,3 +45,5 @@
   loop:
     - ppa:phoerious/keepassxc
     - ppa:deadsnakes/ppa
+
+

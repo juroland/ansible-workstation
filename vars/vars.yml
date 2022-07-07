@@ -26,7 +26,7 @@ code_extensions:
   code_spell_checker: streetsidesoftware.code-spell-checker
   docker: ms-azuretools.vscode-docker
   github-pull-request: github.vscode-pull-request-github
-  go: ms-vscode.go
+  go: golang.Go
   markdownlint: davidanson.vscode-markdownlint
   path_intellisense: christian-kohler.path-intellisense
   pyright: ms-pyright.pyright
