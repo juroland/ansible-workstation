@@ -8,12 +8,17 @@
   apt:
     pkg:
     - apt-transport-https
+    - audacity
     - ca-certificates
     - chrome-gnome-shell
+    - cloudsql-proxy
     - code
+    - containerd.io
     - curl
-    - docker
-    - docker-compose
+    - docker-buildx-plugin
+    - docker-ce
+    - docker-ce-cli
+    - docker-compose-plugin
     - ffmpeg
     - fonts-firacode
     - gnupg-agent
@@ -23,19 +28,25 @@
     - keepassxc
     - kubectl
     - libhdf5-dev
+    - net-tools
     - pass
+    - postgresql-client
     - python3-gpg
     - python3-pip
     - python3-psutil
     - python3-venv
     - python3-virtualenv
+    - python3-virtualenvwrapper
+    - python3.10
     - python3.7
     - python3.8
     - python3.9
-    - python3.10
+    - python3.9-venv
     - software-properties-common
+    - thunderbird
     - tilix
     - x11-utils
+    - xsel
     - zsh
 
 - name: Download and install binary files
@@ -49,4 +60,4 @@
   apt:
     deb: "{{ item }}"
   loop:
-    - https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb
+    - https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2024.04.17_amd64.deb

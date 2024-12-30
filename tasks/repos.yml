@@ -19,13 +19,6 @@
     state: present
     keyring: /usr/share/keyrings/google.gpg
 
-- name: Add chrome apt repository
-  apt_repository:
-    repo: 'deb [arch=amd64 signed-by=/usr/share/keyrings/google.gpg] https://dl.google.com/linux/chrome/deb/ stable main'
-    state: present
-    filename: chrome
-    update_cache: yes
-
 - name: Add google cloud apt-key
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
@@ -46,4 +39,15 @@
     - ppa:phoerious/keepassxc
     - ppa:deadsnakes/ppa
 
+- name: Add docker apt-key
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+    keyring: /usr/share/keyrings/docker.gpg
+    
+- name: Add docker repository
+  apt_repository:
+    repo: 'deb [signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu noble stable'
+    state: present
+    update_cache: yes
 
