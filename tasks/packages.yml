@@ -35,14 +35,11 @@
     - python3-pip
     - python3-psutil
     - python3-venv
-    - python3-virtualenv
     - python3-virtualenvwrapper
-    - python3.10
-    - python3.7
-    - python3.8
-    - python3.9
+    - python3.11-venv
     - python3.9-venv
     - software-properties-common
+    - sshfs
     - thunderbird
     - tilix
     - x11-utils

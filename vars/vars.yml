@@ -1,5 +1,4 @@
 ---
-
 # User
 user: you
 user_email: you@example.com
@@ -12,6 +11,9 @@ gsettings:
   desktop-toggle: # ensure ctrl+alt+d is disabled
     key: /org/gnome/desktop/wm/keybindings/show-desktop
     value: "['<Primary><Super>d', '<Super>d']"
+  dock-icons:
+    key: /org/gnome/shell/extensions/dash-to-dock/show-icons-emblems
+    value: "false"
 
 dotfiles:
   repo: http://github.com/juroland/dotfiles
