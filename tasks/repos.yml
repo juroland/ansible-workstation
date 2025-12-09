@@ -32,6 +32,13 @@
     filename: gcloud
     update_cache: yes
 
+- name: Add google repository
+  apt_repository:
+    repo: 'deb [signed-by=/usr/share/keyrings/google.gpg] http://dl.google.com/linux/chrome/deb/ stable main'
+    state: present
+    filename: google
+    update_cache: yes
+
 - name: Add PPAs
   apt_repository:
     repo: "{{ item }}"
