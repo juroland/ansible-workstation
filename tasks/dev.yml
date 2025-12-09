@@ -4,3 +4,9 @@
   shell: code --install-extension {{ item.value }}
   with_dict: "{{ code_extensions }}"
   become: false
+
+- name: Setup Rust environment
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  args:
+    creates: /home/{{ user }}/.cargo/bin/rustc
+  become: false
