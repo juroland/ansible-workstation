@@ -57,4 +57,4 @@
   apt:
     deb: "{{ item }}"
   loop:
-    - https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2024.04.17_amd64.deb
+    - https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2025.05.20_amd64.deb
